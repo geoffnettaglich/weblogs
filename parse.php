@@ -147,11 +147,6 @@ function process_line($line, $server)
     $host = '-';
     $firstByte = NULL;
   }
-
-  #if('www.kiwicollection.com' != $host && 'origin.kiwicollection.com' != $host)
-  #{
-  #  return NULL;
-  #}
    
   $results = array(
       'server' => $server,
@@ -262,11 +257,8 @@ function insert_data($data, $statement)
   
   foreach($data as $col => $val)
   {
-    #print("$col : $val\n");
     $params[':'.$col] = $val;
   }
- 
-  #print_r($params);
 
   if(!$statement->execute($params))
   {
